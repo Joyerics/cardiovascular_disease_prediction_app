@@ -55,7 +55,7 @@
       <header class="hero-card">
         <div>
           <p class="tiny-label">Patient intake</p>
-          <h2>Cardiovascular disease risk screening form</h2>
+          <h2>Cardiovascular Disease Risk Screening Form</h2>
           <p class="hero-copy">Enter a patient’s health profile to estimate cardiovascular disease risk using the saved model pipeline.</p>
         </div>
         <div class="hero-badge">Hospital-ready<br>UI concept</div>
@@ -82,8 +82,25 @@
 
             {% for col in numeric_cols %}
             <div class="field">
-              <label for="{{ col }}">{{ col.replace('_', ' ') }}</label>
+              <label for="{{ col }}">
+               {% if col == "Alcohol_Consumption" %}
+               Alcohol Consumption (past 30 days)
+               {% elif col == "Fruit_Consumption" %}
+               Fruit Consumption (past 30 days)
+               {% elif col == "Green_Vegetables_Consumption" %}
+               Green Vegetables Consumption (past 30 days)
+               {% elif col == "FriedPotato_Consumption" %}
+               Fried Potato Consumption (past 30 days)
+               {% else %}
+               {{ col.replace('_', ' ') }}
+               {% endif %}
+              </label>
               <input type="number" step="any" name="{{ col }}" id="{{ col }}" value="{{ submitted.get(col, defaults[col]) }}">
+              {% if col in ["Alcohol_Consumption", "Fruit_Consumption", "Green_Vegetables_Consumption", "FriedPotato_Consumption"] %}
+                <small class="field-hint">
+                  Frequency based on past 30 days
+                </small>
+              {% endif %}
             </div>
             {% endfor %}
           </div>
