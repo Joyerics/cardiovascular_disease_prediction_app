@@ -120,7 +120,7 @@ The project includes a **fully deployed healthcare-style web application**.
 
 ### Live App:
 
-👉 https://healthcare-prediction-model.onrender.com
+👉 https://cardiovascular_disease_prediction_app.onrender.com
 
 ---
 
@@ -149,7 +149,7 @@ The project includes a **fully deployed healthcare-style web application**.
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/cvd-prediction.git
+git clone https://github.com/Joyerics/cardiovascular_disease_prediction_app.git
 cd cvd-prediction
 
 pip install -r requirements.txt
@@ -182,21 +182,6 @@ python app.py
 * Improve recall through threshold tuning
 * Implement fairness-aware machine learning
 
----
-
-## Contributors
-
-* **Chinenye Onyedika**
-
-  * UI Development
-  * Model Integration
-  * Deployment
-
-* **Nene Tenabe**
-
-  * Data Cleaning
-  * Hypothesis Testing
-  * Analysis
 
 ---
 
